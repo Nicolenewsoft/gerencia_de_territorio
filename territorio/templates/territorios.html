@@ -2,11 +2,45 @@
 {% block title %}Lista de Territórios{% endblock %}
 {% block content %}
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Listagem de Territórios</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url  'atualizacao' %}"><h6>Novo Território </h6><span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                    
+            </div>
+        </div>
+    </div>
+</nav>
 
-<ul>
-    {% for atualizacao_territorio in atualizacao_territorios %}
-    <li>{{ atualizacao_territorio.dirigente }}</li>
-    {% endfor %}
-</ul>
+<br />
+
+
+{% for atualizacao_territorio in atualizacao_territorios %}
+<div class="row">
+        <div class="col-sm">
+                <div class="list-group">
+                        <a href="{% url  'territorios_update' atualizacao_territorio.id %}" class="list-group-item">{{ atualizacao_territorio.dirigente }}</a>
+                        {{ atualizacao_territorio.data_ultima_vez_trabalhado }}
+      
+                </div>
+        </div>
+        <div class="col-sm">
+                        <a href="{% url 'territorios_delete' atualizacao_territorio.id %}" class="btn btn-danger">Deletar</a>
+        </div>
+</div>
+    
+    
+{% endfor %}
+
 
 {% endblock %}

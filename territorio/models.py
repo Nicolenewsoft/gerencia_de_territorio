@@ -10,6 +10,7 @@ class Formulario(models.Model):
 
 class Atualizacao_territorio(models.Model):
     data_de_inicio = models.DateTimeField('Data de Início')
+    data_ultima_vez_trabalhado = models.DateTimeField('Data da última vez trabalhado', null=True)
     dirigente = models.CharField(max_length=30, blank=False)
     quadras = models.CharField(max_length=50, blank=False)
     data_de_termino = models.DateTimeField('Data de Término')

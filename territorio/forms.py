@@ -14,5 +14,5 @@ class AddForm(ModelForm):
 class Att_territorio(ModelForm):
     class Meta:
         model = Atualizacao_territorio
-        fields = ['data_de_inicio', 'dirigente', 'quadras', 'data_de_termino']
+        fields = ['data_de_inicio', 'dirigente', 'quadras', 'data_de_termino', 'data_ultima_vez_trabalhado']
         

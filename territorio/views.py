@@ -25,9 +25,19 @@ def territorio_list(request):
     
 
 def territorios_update(request, id):
-    territorio = get_object_or_404(Atualizacao_territorio, pk=id)
-    att = Att_territorio(request.POST or None, instance=territorio)
+    atualizacao_territorio = get_object_or_404(Atualizacao_territorio, pk=id)
+    att = Att_territorio(request.POST or None, instance=atualizacao_territorio)
     if att.is_valid():
         att.save()
         return redirect('territorio_list')
     return render(request, 'att_territorio.html', {'att': att})
+
+def territorios_delete(request, id):
+    atualizacao_territorio = get_object_or_404(Atualizacao_territorio, pk=id)
+    att = Att_territorio(request.POST or None, instance=atualizacao_territorio)
+
+    if request.method == 'POST':
+        atualizacao_territorio.delete()
+        return redirect('territorio_list')
+    return render(request, 'territorio_delete_confirm.html', {'att': att})
+

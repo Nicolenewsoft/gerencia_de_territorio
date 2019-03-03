@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}Confirmar deleção{% endblock %}
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="col-md-6">
+                <h4>Confirmação</h4>
+        </div>
+        <div class="col-md-6">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'territorio_list' %}"><h6>Listar Territórios</h6></a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="{% url 'atualizacao' %}"><h6>Novo Território</h6></a>
+                          </li>
+                    
+                  </ul>
+                </div>
+        </div>
+</nav>
+
+<br />
+<h5>Tem certeza que deseja deletar este território?</h5>
+    <form method="POST">
+        {% csrf_token %}
+        <!--Aqui referenciamos o form-->
+        
+        <button type="submit" class="btn btn-danger">Deletar</button>
+
+    </form>
+
+{% endblock %}
