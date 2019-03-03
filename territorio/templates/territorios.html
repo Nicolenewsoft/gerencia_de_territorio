@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Territórios{% endblock %}
+{% block content %}
+
+
+<ul>
+    {% for atualizacao_territorio in atualizacao_territorios %}
+    <li>{{ atualizacao_territorio.dirigente }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
