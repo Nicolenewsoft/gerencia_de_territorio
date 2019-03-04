@@ -9,7 +9,7 @@ from django import forms
 class AddForm(ModelForm):
     class Meta:
         model = Formulario
-        fields = ['nome', 'senha', 'nome_de_usuario', 'email', 'classificacao']
+        fields = ['nome', 'senha', 'nome_de_usuario', 'email', 'user']
 
 class Att_territorio(ModelForm):
     class Meta:
