@@ -19,6 +19,7 @@ class Atualizacao_territorio(models.Model):
     dirigente = models.CharField(max_length=30, blank=False)
     quadras = models.CharField(max_length=50, blank=False)
     data_de_termino = models.DateTimeField('Data de Término', null=True, blank=True)
+    territorio_finalizado = models.BooleanField(default=False)
 
     def __str__(self):
         return self.dirigente

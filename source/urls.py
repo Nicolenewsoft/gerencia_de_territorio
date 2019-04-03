@@ -21,3 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('territorio/', include(territorio_urls)),
 ]
+
+admin.site.site_header = 'Gestão de Território'
+admin.site.index_title = 'Administração'
+admin.site.site_title = 'Seja bem vindo'
