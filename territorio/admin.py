@@ -1,11 +1,10 @@
 from django.contrib import admin
 
 from .models import Formulario, Atualizacao_territorio
-#from django.contrib.auth.admin import UserAdmin
 
-#UserAdmin.list_display = ('new_field',)  # don't forget the commas
-#UserAdmin.list_filter = ('new_field', )
-#UserAdmin.fieldsets = ('new_field',)
+class AtualizacaoTerritorioAdmin(admin.ModelAdmin):
+
+    list_display = ('data_ultima_vez_trabalhado', 'dirigente', )
 
 admin.site.register(Formulario)
-admin.site.register(Atualizacao_territorio)
+admin.site.register(Atualizacao_territorio, AtualizacaoTerritorioAdmin)

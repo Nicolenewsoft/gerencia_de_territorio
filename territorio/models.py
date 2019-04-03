@@ -9,6 +9,9 @@ class Formulario(models.Model):
     email = models.EmailField(max_length=50, null=True, blank=False)
     user = models.BooleanField('ADM', null=True, blank=False)
 
+    def __str__(self):
+        return self.nome
+
 
 class Atualizacao_territorio(models.Model):
     data_de_inicio = models.DateTimeField('Data de Início')
@@ -16,3 +19,6 @@ class Atualizacao_territorio(models.Model):
     dirigente = models.CharField(max_length=30, blank=False)
     quadras = models.CharField(max_length=50, blank=False)
     data_de_termino = models.DateTimeField('Data de Término')
+
+    def __str__(self):
+        return self.dirigente
