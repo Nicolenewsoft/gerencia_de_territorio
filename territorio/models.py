@@ -1,5 +1,7 @@
 from django.db import models
 
+#Cara eu fiz esse model pra add user. Mas quero refatorar, creio que ele não é nescessário,
+#visto que o django admin já faz tudo.
 class Formulario(models.Model):
     nome = models.CharField(max_length=30, blank=False)
     senha = models.CharField(max_length=6, blank=False)

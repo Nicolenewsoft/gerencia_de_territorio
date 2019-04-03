@@ -4,8 +4,8 @@ from .forms import AddForm, Att_territorio
 
 # Create your views here.
 def form(request):
-    
-        form = AddForm(request.POST or None) #Receberá dos forms, onde vai fazer uma requisição post, caso não tenha: None,
+
+    form = AddForm(request.POST or None) #Receberá dos forms, onde vai fazer uma requisição post, caso não tenha: None,
     if form.is_valid():
         form.save()
     
